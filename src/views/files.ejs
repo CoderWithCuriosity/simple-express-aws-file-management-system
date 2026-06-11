@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Files</title>
+</head>
+
+<body>
+
+<h1>Uploaded Files</h1>
+
+<ul>
+
+<% files.forEach(file => { %>
+
+<li>
+
+    <a
+      href="/uploads/<%= file %>"
+      target="_blank"
+    >
+      <%= file %>
+    </a>
+
+    <form
+      action="/api/delete/<%= file %>"
+      method="POST"
+      style="display:inline;"
+    >
+      <button>
+        Delete
+      </button>
+    </form>
+
+</li>
+
+<% }) %>
+
+</ul>
+
+<a href="/">
+    Back
+</a>
+
+</body>
+</html>
