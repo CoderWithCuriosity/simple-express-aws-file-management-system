@@ -9,34 +9,29 @@
 <h1>Uploaded Files</h1>
 
 <ul>
-
 <% files.forEach(file => { %>
 
 <li>
 
-    <a
-      href="/uploads/<%= file %>"
+    <a 
+      href="<%= file.url %>" 
       target="_blank"
     >
-      <%= file %>
+      <%= file.filename %>
     </a>
 
     <form
-      action="/api/delete/<%= file %>"
+      action="/api/delete/<%= file.filename %>"
       method="POST"
       style="display:inline;"
     >
-      <button>
-        Delete
-      </button>
+      <button>Delete</button>
     </form>
 
 </li>
 
 <% }) %>
-
 </ul>
-
 <a href="/">
     Back
 </a>
